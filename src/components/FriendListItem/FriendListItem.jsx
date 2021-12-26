@@ -25,18 +25,18 @@ const LabelText = styled.span`
 const FriendListItem = () => {
   return (
     <>
-      {friends.map(friend => (
-        <FriendItem key={friend.id}>
+      {friends.map(({ id, isOnline, avatar, name }) => (
+        <FriendItem key={id}>
           <>
-            {friend.isOnline ? (
-              <LabelText green>{friend.isOnline}</LabelText>
+            {isOnline ? (
+              <LabelText green>{isOnline}</LabelText>
             ) : (
-              <LabelText>{friend.isOnline}</LabelText>
+              <LabelText>{isOnline}</LabelText>
             )}
           </>
 
-          <AvatarImg src={friend.avatar} alt={friend.name} width="48" />
-          <AvatarName className="name">{friend.name}</AvatarName>
+          <AvatarImg src={avatar} alt={name} width="48" />
+          <AvatarName className="name">{name}</AvatarName>
         </FriendItem>
       ))}
     </>

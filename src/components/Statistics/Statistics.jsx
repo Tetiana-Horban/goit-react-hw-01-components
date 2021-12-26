@@ -26,10 +26,10 @@ const StatsPercentage = styled.span`
 const Statistics = ({ stats }) => {
   return (
     <StatsList>
-      {stats.map(statsValue => (
-        <StatsItem key={statsValue.id}>
-          <StatsLabel>{statsValue.label}</StatsLabel>
-          <StatsPercentage>{statsValue.percentage}%</StatsPercentage>
+      {stats.map(({ id, label, percentage }) => (
+        <StatsItem key={id}>
+          <StatsLabel>{label}</StatsLabel>
+          <StatsPercentage>{percentage}%</StatsPercentage>
         </StatsItem>
       ))}
     </StatsList>
